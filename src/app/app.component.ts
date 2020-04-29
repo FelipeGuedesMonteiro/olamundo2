@@ -12,21 +12,27 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
+
+    // Item de menu "home"
     {
       title: 'Início',
       url: '/home',
       icon: 'home'
     },
+
     {
-      title: 'Sobre',
+      title: 'Sobre...',
       url: '/about',
       icon: 'information-circle'
     },
+
+
     {
-      title: 'Contato',
-      url: '/contact',
+      title: 'Faça Contato',
+      url: '/contatos',
       icon: 'mail'
-    },  
+    },
+
   ];
 
   constructor(
