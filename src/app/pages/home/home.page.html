@@ -6,18 +6,34 @@
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
 
-        <ion-title>Página Inicial</ion-title>
+        <ion-title>Não Faz Nada</ion-title>
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
 
-    <div class="content">
+    <p>Você está na página inicial da aplicação.</p>
 
-        <p>Você está na página inicial da aplicação.</p>
+    <ion-button expand="block" class="ion-margin" (click)="listUsers()">Listar usuários</ion-button>
+    <ion-button expand="block" class="ion-margin" (click)="createUsers()">Criar usuário</ion-button>
 
-        <ion-button expand="block" class="ion-margin-bottom" (click)="listUsers()">Listar usuários</ion-button>
+    <ion-item-divider></ion-item-divider>
 
-    </div>
+    <p>Acesso aos recursos do dispositivo.</p>
+
+    <ion-button expand="block" class="ion-margin" (click)="devStatus()">Status do Dispositivo</ion-button>
+    <ion-button expand="block" class="ion-margin" (click)="devCamera()">Tirar Foto</ion-button>
+    <ion-button expand="block" class="ion-margin" (click)="geolocation()">GPS</ion-button>
+
+    <ion-item-divider></ion-item-divider>
+
+    <p>Status da aplicação:</p>
+    <ul>
+        <li>Listando usuários</li>
+        <li>Exibe detalhes de um usuário</li>
+        <li>Apaga um usuário</li>
+        <li>Editar um usuário</li>
+        <li>Cadastrar um usuário</li>
+    </ul>
 
 </ion-content>

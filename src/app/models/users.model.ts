@@ -1,4 +1,4 @@
-// Formata dados do usuário
+// Modelo de dados do usuário
 export interface User {
     id: number;
     name: string;
@@ -8,14 +8,32 @@ export interface User {
     date: Date;
 }
 
-// O que esperar do response da listagem de usuários
+// Response dos usuários
 export interface ResponseUsers {
-    status: string;
+    status: number;
     result: User[];
 }
 
-// O que esperar do response de apenas 1 usuário
+// Response de 1 usuário
 export interface ResponseUser {
-    status: string;
+    status: number;
     result: User[];
+}
+
+// Response de Delete
+export interface ResponseDelUser {
+    status: number;
+    result: string;
+}
+
+// Response de Post
+export interface ResponsePostUser {
+    status: number;
+    result: string;
+}
+
+// Response de Put
+export interface ResponsePutUser {
+    status: number;
+    result: string;
 }

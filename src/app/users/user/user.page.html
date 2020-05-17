@@ -6,21 +6,22 @@
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
 
-        <ion-title>Dadas do Usuário</ion-title>
+        <ion-title>Dados do Usuário</ion-title>
 
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-    <!-- Se usário não existe -->
+    <!-- Se usuário não existe -->
     <ion-list *ngIf="noUser">
         <ion-item color="danger">
             <ion-label class="ion-text-center">Usuário não foi encontrado!</ion-label>
         </ion-item>
+        <ion-button expand="block" class="ion-margin" (click)="listUsers()">Listar usuários</ion-button>
     </ion-list>
 
-    <!-- Carregando dados ainda -->
+    <!-- Spinner -> Carregando dados. Aguarde... -->
     <div class="ion-text-center ion-margin ion-padding" *ngIf="!data && !noUser">
         <ion-spinner name="lines"></ion-spinner>
     </div>
@@ -39,6 +40,7 @@
 
             <ion-card-content>
 
+                <!-- Formatando a data -->
                 <p>Cadastrado em: {{data.date | date: 'dd/MM/yyyy, HH:mm'}}.</p>
                 <p>
                     Status:
@@ -69,6 +71,8 @@
             </ion-card-content>
 
         </ion-card>
+
+        <ion-button expand="block" class="ion-margin" (click)="listUsers()">Listar usuários</ion-button>
 
     </div>
 

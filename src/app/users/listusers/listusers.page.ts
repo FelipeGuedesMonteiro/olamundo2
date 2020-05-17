@@ -22,11 +22,15 @@ export class ListusersPage implements OnInit {
   // Variável com a array de usuários obtidos
   data: Array<any> = [];
 
-  constructor(private usersService: UsersService) { }
+  constructor(
+
+    // Instância do service de acesso à API
+    private usersService: UsersService
+  ) { }
 
   ngOnInit(): void {
 
-    // Obtendo os dados da API
+    // Obtendo os dados da API usando o service getUsers
     this.usersService.getUsers().subscribe((res: any) => {
 
       // Se falhou ao obter os dados
@@ -35,8 +39,8 @@ export class ListusersPage implements OnInit {
         return false;
       }
 
-      // Loop para descartar usuários removidos (null) da listagem
-      res.result.forEach((value) => {
+      // Loop para descartar usuários removidos (result = null) da listagem
+      res.result.forEach((value: any) => {
         if (value !== null) {
           this.data.push(value);
         }
@@ -83,7 +87,5 @@ export class ListusersPage implements OnInit {
 
       // Atraso em milissegundos para exibir o spinner e rolagem mais suave
     }, 800);
-
-
   }
 }
